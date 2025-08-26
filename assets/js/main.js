@@ -12,44 +12,7 @@
   // Stamp current year in footer
   const yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
-
-  // ===== Site Search (index.html) =====
-  const q = document.getElementById('site-search');
-  const results = document.getElementById('search-results');
-
-  async function buildSearchIndex() {
-    // For now, fetch blogpost.html and extract H1/H2/H3
-    try {
-      const res = await fetch('/blogpost.html', { credentials: 'same-origin' });
-      const html = await res.text();
-      const doc = new DOMParser().parseFromString(html, 'text/html');
-      const headings = [...doc.querySelectorAll('article h1, article h2, article h3')];
-      return headings.map(h => ({
-        page: 'Blogpost',
-        text: h.textContent.trim(),
-        id: h.id || '',
-        url: 'blogpost.html' + (h.id ? '#' + h.id : '')
-      }));
-    } catch (e) {
-      // fail silently without console errors
-      return [];
-    }
-  }
-
-  let searchIndex = null;
-  if (q && results) {
-    q.addEventListener('input', async (e) => {
-      const term = e.target.value.trim().toLowerCase();
-      if (!term) { results.style.display = 'none'; results.innerHTML = ''; return; }
-      if (!searchIndex) searchIndex = await buildSearchIndex();
-      const matches = searchIndex.filter(item => item.text.toLowerCase().includes(term) || item.page.toLowerCase().includes(term));
-      results.innerHTML = matches.slice(0, 12).map(m => `<a role="option" href="${m.url}"><strong>${m.page}:</strong> ${m.text}</a>`).join('') || `<div class="small muted" style="padding:.5rem .6rem">No matches.</div>`;
-      results.style.display = 'block';
-    });
-    // close dropdown on blur
-    q.addEventListener('blur', () => setTimeout(() => { results.style.display = 'none'; }, 150));
-  }
-
+  
   // ===== Blogpost features =====
   const article = document.getElementById('post');
   if (article) {
