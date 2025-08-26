@@ -1,16 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <!--
-    Design rubric annotations (non-rendered):
-
-    Satya D best practices implemented: content-first width (780–900px), enlarged base font, 1.6–1.8 line-height, clear hierarchy, mobile-first, search, and centered content. [Ref 2]
-    Roundup principles: semantic Article structure, scannable headings, hero media, sticky ToC on desktop, conservative color palette, limited distractions, and performance-minded media (lazy iframes, responsive images). [Ref 3]
-
-    Accessibility: skip-link, semantic <article>, ARIA labels for nav, visible focus, high contrast, captions for all media, prefers-reduced-motion respected.
-    Performance: single CSS/JS, defer JS, no frameworks, responsive & lazy media, minimal layout shift.
-  -->
-
+  <!-- Single-column revision: remove desktop sidebar ToC and grid split -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <title>Blogpost — Academic Multimodal Analysis</title>
@@ -35,14 +26,14 @@
     "headline": "Blogpost — Academic Multimodal Analysis",
     "author": {
       "@type": "Person",
-      "name": "[YOUR_NAME]",
-      "email": "[EMAIL]"
+      "name": "Ansar Zeinulla",
+      "email": "ansar.zeinulla@nu.edu.kz"
     },
     "datePublished": "2025-08-26",
     "dateModified": "2025-08-26",
     "publisher": {
       "@type": "Organization",
-      "name": "[UNIVERSITY]"
+      "name": "Nazarbayev University"
     },
     "image": [
       "https://picsum.photos/seed/airastana-1/1200/675",
@@ -50,21 +41,19 @@
       "https://picsum.photos/seed/airastana-3/1200/675"
     ],
     "video": "https://www.youtube-nocookie.com/embed/S08swmoFiYM",
-    "keywords": "[KEYWORDS_TAGS]"
+    "keywords": "#AirAstana, #Air, #Kazakhstan, #Fly"
   }
   </script>
 </head>
 <body>
-
   <!-- Reading progress bar -->
   <div id="reading-progress" class="reading-progress" role="progressbar" aria-label="Reading progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div>
 
   <header class="site-header" role="banner">
     <div class="wrap">
-      <a class="brand" href="/">Content‑First Site</a>
       <nav class="site-nav" aria-label="Primary">
-        <a class="nav-link is-active" href="index.html">Home</a>
-        <a class="nav-link" href="blogpost.html">Blogpost</a>
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link is-active" href="blogpost.html" aria-current="page">Blogpost</a>
         <span class="nav-link is-ghost" aria-disabled="true" tabindex="-1">Tasks</span>
       </nav>
     </div>
@@ -75,20 +64,15 @@
       <header class="post-header">
         <h1 id="post-title" class="h1">Academic Multimodal Analysis</h1>
         <p class="post-meta">
-          <span>Author: <strong>[YOUR_NAME]</strong></span> ·
+          <span>Author: <strong>Ansar Zeinulla</strong></span> ·
           <span>Date: <time datetime="2025-08-26">August 26, 2025</time></span> ·
           <span id="reading-time">~X min read</span>
         </p>
-        <p class="muted small">Tags: <span class="tag">[KEYWORDS_TAGS]</span></p>
+        <p class="muted small">Tags: <span class="tag">#AirAstana #Air #Kazakhstan #Fly</span></p>
       </header>
 
-      <!-- Desktop sticky ToC -->
-      <aside class="toc-desktop" aria-label="Table of Contents">
-        <nav id="toc" class="toc"></nav>
-      </aside>
-
-      <!-- Mobile ToC -->
-      <details class="toc-mobile" aria-label="Table of Contents (mobile)">
+      <!-- Sidebar TOC removed for 1-column layout; keep mobile/details TOC for all screens -->
+      <details class="toc-mobile" open aria-label="Table of Contents">
         <summary>Table of Contents</summary>
         <nav id="toc-mobile"></nav>
       </details>
@@ -110,32 +94,27 @@
       </figure>
 
       <div id="article-body">
-        <!-- Abstract -->
         <section id="abstract">
           <h2>Abstract</h2>
           <p>[ABSTRACT_SUMMARY] Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer et congue nulla, vel tempor erat. Sed non risus at neque interdum efficitur. This essay previews the approach, data, and <em>significance</em> of the analysis presented below.</p>
         </section>
 
-        <!-- Introduction & Thesis -->
         <section id="introduction-thesis">
           <h2>Introduction &amp; Thesis</h2>
           <p>This post analyzes a contemporary airline safety video through a rhetorical and semiotic lens, situating aviation safety messaging within national branding and cultural representation. The thesis is: <strong>[THESIS_STATEMENT]</strong>. This content‑first presentation follows established readability and layout practices (e.g., 780–900px desktop content width, clear hierarchy, and mobile‑first flow). <sup><a href="#ref-2">[2]</a><a href="#ref-3">[3]</a></sup></p>
           <p>Guiding research questions include: <strong>[RESEARCH_QUESTIONS]</strong>.</p>
         </section>
 
-        <!-- Methods / Frameworks -->
         <section id="methods-frameworks">
           <h2>Methods / Frameworks</h2>
           <p>This study applies <strong>[METHODS_FRAMEWORKS]</strong> to examine modes (image, sound, language, gesture, spatial layout) in concert. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque consequat vehicula efficitur. Inline citations appear as footnote‑style anchors and collect in a References section below.</p>
         </section>
 
-        <!-- Theoretical Context -->
         <section id="theory">
           <h2>Theoretical Context</h2>
           <p>We situate the analysis within relevant theories of multimodality and rhetoric, articulating the relationship between safety communication and brand semiotics. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec viverra, nibh id ultrices aliquet, erat mauris maximus risus, nec congue velit orci vitae dui.</p>
         </section>
 
-        <!-- Close Reading of Modes -->
         <section id="close-reading">
           <h2>Close Reading of Modes</h2>
           <p>Audio track: pacing, timbre, and motif signal calm authority. Visual composition: landscapes and cultural scenes leverage national identity. On‑screen text: typographic hierarchy foregrounds safety requirements. Editing rhythm: shot duration modulates attention. Gesture &amp; blocking: cabin crew movements model compliance. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -169,40 +148,34 @@
           </blockquote>
         </section>
 
-        <!-- Significance -->
         <section id="significance">
           <h2>Significance &amp; Relevance to Prompt</h2>
           <p><strong>[SIGNIFICANCE]</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. The analysis connects rhetorical strategies to audience safety outcomes and national branding, addressing <em>[RESEARCH_QUESTIONS]</em> explicitly.</p>
         </section>
 
-        <!-- Counterarguments -->
         <section id="counterarguments">
           <h2>Counterarguments &amp; Limitations</h2>
           <p><strong>[COUNTERARGUMENT]</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. We note sampling limitations and interpretive bias; future work could triangulate with viewer testing and airline policy review.</p>
         </section>
 
-        <!-- Conclusion -->
         <section id="conclusion">
           <h2>Conclusion</h2>
           <p>We conclude with <strong>[KEY_FINDINGS]</strong> and implications for multimodal safety communication across carriers. Lorem ipsum dolor sit amet, consectetur adipiscing elit. This artifact shows how aesthetic choices can amplify compliance without diluting clarity.</p>
         </section>
 
-        <!-- Audio sample via data URI (tiny sine tone) -->
         <figure class="media">
           <figcaption class="figcap">Audio sample (data URI): tiny embedded tone; replace with your own clip if desired.</figcaption>
           <audio controls preload="metadata" aria-label="Sample audio clip (embedded)">
-            <source type="audio/wav" src="data:audio/wav;base64,UklGRiQyAABXQVZFZm10IBAAAAABAAEAQB8AAIA+AAACABAAZGF0YQAyAAAAAAENeRgNIbcl7SWmIWQZp0yLErZ9d9s5c2s3qQ8L2Zc6f9x9x3p2g1GJ3u3wYp3mF6n5H2Z2p7O1c3e0U6x2X1u2p6r2r4r2L5m0v5D8W9T9t9s7q4m1o0j2g3f4e4d4c4b4a4Z4Y4X4W4V4U4T4S4R4Q4P4O4N4M4L4K4J4I4H4G4F4E4D4C4B4A4/3+2+1+0+"> <!-- ~0.8s 440Hz -->
+            <source type="audio/wav" src="data:audio/wav;base64,UklGRiQyAABXQVZFZm10IBAAAAABAAEAQB8AAIA+AAACABAAZGF0YQAyAAAAAAENeRgNIbcl7SWmIWQZp0yLErZ9d9s5c2s3qQ8L2Zc6f9x9x3p2g1GJ3u3wYp3mF6n5H2Z2p7O1c3e0U6x2X1u2p6r2r4r2L5m0v5D8W9T9t9s7q4m1o0j2g3f4e4d4c4b4a4Z4Y4X4W4V4U4T4S4R4Q4P4O4N4M4L4K4J4I4H4G4F4E4D4C4B4A4/3+2+1+0+">
             Your browser does not support the audio element.
           </audio>
         </figure>
 
-        <!-- Design Notes callout -->
         <aside class="callout" aria-label="Design notes">
           <h3>Design Notes</h3>
-          <p>This page implements a content‑first layout (narrow content column, clear hierarchy, mobile‑first) and supports F‑pattern/layer‑cake scanning with descriptive section headings and a sticky Table of Contents on desktop. <sup><a href="#ref-2">[2]</a><a href="#ref-3">[3]</a></sup></p>
+          <p>This page uses a single content column (no sidebar). A collapsible Table of Contents appears above and remains non‑sticky to avoid overlap. <sup><a href="#ref-2">[2]</a><a href="#ref-3">[3]</a></sup></p>
         </aside>
 
-        <!-- APA References with anchor-linked footnotes -->
         <section id="references">
           <h2>References (APA 7)</h2>
           <ol>
@@ -227,10 +200,9 @@
     </article>
   </main>
 
-
   <footer class="site-footer" role="contentinfo">
     <div class="wrap">
-      <p class="small muted">Contact: <a href="mailto:[EMAIL]">ansar.zeinulla@nu.edu.kz</a> · © <span id="year"></span> Ansar Zeinulla. All rights reserved.</p>
+      <p class="small muted">Contact: <a href="mailto:ansar.zeinulla@nu.edu.kz">ansar.zeinulla@nu.edu.kz</a> · © <span id="year"></span> Ansar Zeinulla. All rights reserved.</p>
     </div>
   </footer>
 </body>
