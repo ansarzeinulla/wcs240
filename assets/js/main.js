@@ -121,6 +121,7 @@
       }
     }, { passive: false });
 
+    
     // Reading progress bar
     const progress = document.getElementById('reading-progress');
     if (progress) {

@@ -5,6 +5,7 @@ Production‑ready static site tailored for a university course. It ships a cont
 
 ## One‑shot deployment (GitHub Pages)
 
+
 1. **Create the repo**
    ```bash
    mkdir content-first-site && cd content-first-site

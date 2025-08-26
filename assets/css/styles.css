@@ -155,6 +155,7 @@ img, iframe, video, audio { max-width: 100%; height: auto; display: block; }
 #search-results a { display: block; padding: .5rem .6rem; text-decoration: none; color: var(--fg); }
 #search-results a:hover, #search-results a:focus { background: color-mix(in srgb, var(--accent) 12%, transparent); }
 
+
 /* Callout */
 .callout {
   border: 1px solid var(--border);
