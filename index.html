@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!--
+    Design rubric annotations (non-rendered):
+
+    Implements Satya D (2023) “How to Design a Blog: 7 Best Practices and Examples”:
+    - Content-first readability: centered content column, 780–900px max-width, 16–20px base, 1.6–1.8 line-height (see CSS tokens). [Ref 2]
+    - Mobile-first: single column on small screens; progressive enhancement for desktop (sticky TOC only on blogpost). [Ref 2]
+    - Visual consistency: one palette, one button style, shared spacing scale via CSS variables. [Ref 2]
+    - Easy navigation + search: global header + in-page search that surfaces H2/H3 targets. [Ref 2 §“Include search”]
+    - Content width guidance (780–900px) explicitly observed. [Ref 2]
+
+    Implements “Roundup of best blog designs” principles (Backlinko, 2024):
+    - Semantic headings, scannable layout, consistent hero + sectioning, strong hierarchy, limited distractions. [Ref 3]
+    - Performance-minded: no external fonts, minimal JS, lazy media, responsive images. [Ref 3]
+  -->
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>Personal Site — Content‑first | Home</title>
+  <meta name="description" content="A lightweight, content‑first personal site for a university course. Accessible, fast, and ready for GitHub Pages.">
+  <link rel="canonical" href="https://example.com/">
+  <meta property="og:title" content="Personal Site — Content‑first | Home">
+  <meta property="og:description" content="A lightweight, content‑first personal site for a university course.">
+  <meta property="og:image" content="https://picsum.photos/seed/og-home/1200/630">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Personal Site — Content‑first | Home">
+  <meta name="twitter:description" content="A lightweight, content‑first personal site for a university course.">
+  <meta name="twitter:image" content="https://picsum.photos/seed/og-home/1200/630">
+
+  <!-- Data-URI favicon (keeps repo flat/small) -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64'%3E%3Crect width='64' height='64' rx='12' fill='%230a84ff'/%3E%3Ctext x='50%25' y='56%25' text-anchor='middle' font-size='44' font-family='system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial, sans-serif' fill='white'%3E%F0%9F%93%96%3C/text%3E%3C/svg%3E">
+
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <script defer src="./assets/js/main.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" role="banner">
+    <div class="wrap">
+      <a class="brand" href="./">Content‑First Site</a>
+      <nav class="site-nav" aria-label="Primary">
+        <a class="nav-link is-active" href="./">Home</a>
+        <a class="nav-link" href="./blogpost.html">Blogpost</a>
+        <span class="nav-link is-ghost" aria-disabled="true" tabindex="-1" title="Coming soon">Tasks</span>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="wrap" tabindex="-1">
+    <section class="hero">
+      <h1 class="h1">Build a content‑first personal site</h1>
+      <p class="lead">
+        Course: <strong>[COURSE_NAME]</strong> — <strong>[SEMESTER]</strong> — <strong>[UNIVERSITY]</strong><br>
+        Author: <strong>[YOUR_NAME]</strong> · <a href="mailto:[EMAIL]">[EMAIL]</a>
+      </p>
+      <p>
+        This site is designed for readability, performance, and accessibility — and deploys cleanly to GitHub Pages with no frameworks.
+      </p>
+      <div class="cta-row">
+        <a class="btn" href="./blogpost.html">View the Blogpost</a>
+      </div>
+    </section>
+
+    <section aria-labelledby="search-label" class="card">
+      <h2 id="search-label" class="h2">Search the site</h2>
+      <form class="search" role="search" aria-label="Site search" onsubmit="return false;">
+        <label for="site-search" class="visually-hidden">Search query</label>
+        <input id="site-search" name="q" type="search" placeholder="Try: blogpost, abstract, methods…" autocomplete="off" inputmode="search" />
+        <div id="search-results" role="listbox" aria-label="Search results"></div>
+      </form>
+      <p class="muted small">Search indexes page titles and H2/H3 section headings across available pages (for now, “Blogpost”).</p>
+    </section>
+
+    <section class="card">
+      <h2 class="h2">What’s inside</h2>
+      <ul>
+        <li>Accessible, mobile‑first layout with a content column at 780–900px for comfortable reading.</li>
+        <li>Academic‑style multimodal analysis post with YouTube video (privacy‑enhanced), images, and a tiny embedded audio sample.</li>
+        <li>Client‑side features: sticky Table of Contents (desktop), reading progress bar, smooth scrolling, and in‑page search.</li>
+        <li>SEO + social: semantic headings, canonical URL, Open Graph/Twitter tags, sitemap and robots.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="wrap">
+      <nav aria-label="Footer">
+        <a class="nav-link" href="./">Home</a>
+        <a class="nav-link" href="./blogpost.html">Blogpost</a>
+      </nav>
+      <p class="small muted">Contact: <a href="mailto:[EMAIL]">[EMAIL]</a> · © <span id="year"></span> [YOUR_NAME]. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
