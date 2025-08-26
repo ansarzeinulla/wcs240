@@ -20,7 +20,7 @@
   async function buildSearchIndex() {
     // For now, fetch blogpost.html and extract H1/H2/H3
     try {
-      const res = await fetch('./blogpost.html', { credentials: 'same-origin' });
+      const res = await fetch('/blogpost.html', { credentials: 'same-origin' });
       const html = await res.text();
       const doc = new DOMParser().parseFromString(html, 'text/html');
       const headings = [...doc.querySelectorAll('article h1, article h2, article h3')];
@@ -28,7 +28,7 @@
         page: 'Blogpost',
         text: h.textContent.trim(),
         id: h.id || '',
-        url: './blogpost.html' + (h.id ? '#' + h.id : '')
+        url: 'blogpost.html' + (h.id ? '#' + h.id : '')
       }));
     } catch (e) {
       // fail silently without console errors
@@ -121,7 +121,7 @@
       }
     }, { passive: false });
 
-    
+
     // Reading progress bar
     const progress = document.getElementById('reading-progress');
     if (progress) {
