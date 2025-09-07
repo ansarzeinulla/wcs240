@@ -48,7 +48,6 @@ html { scroll-behavior: smooth; }
 @media (min-width: 1000px) {
   .post { grid-template-columns: 260px 1fr; } /* + gap: 2rem */
   .toc-desktop { display: block; }
-  .toc-mobile { display: none; }
 }
 
 
