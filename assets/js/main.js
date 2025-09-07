@@ -7,10 +7,41 @@
 
 (function () {
   'use strict';
+  
+  // Aviation theme utilities
+  const addFlightEffects = (progress) => {
+    // Add visual flight effects based on scroll progress
+    const progressValue = parseInt(progress.style.getPropertyValue('--progress')) || 0;
+    
+    if (progressValue > 10 && progressValue < 90) {
+      progress.classList.add('flying');
+    } else {
+      progress.classList.remove('flying');
+    }
+    
+    // Add milestone effects
+    if (progressValue === 25 || progressValue === 50 || progressValue === 75) {
+      progress.classList.add('milestone');
+      setTimeout(() => progress.classList.remove('milestone'), 1000);
+    }
+  };
 
   // Year in footer
   const yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
+  
+  // Add aviation theme elements
+  const addAviationElements = () => {
+    // Add flight indicators when content loads
+    const sections = document.querySelectorAll('section');
+    sections.forEach((section, index) => {
+      section.style.setProperty('--section-delay', (index * 0.1) + 's');
+      section.classList.add('section-animate');
+    });
+  };
+  
+  // Initialize aviation theme
+  document.addEventListener('DOMContentLoaded', addAviationElements);
 
   // Blogpost features
   const article = document.getElementById('post');
@@ -80,16 +111,22 @@
       }
     }, { passive: false });
 
-    // Reading progress bar
+    // Aviation-themed reading progress
     const progress = document.getElementById('reading-progress');
     if (progress && body) {
       const update = () => {
         const total = body.scrollHeight - window.innerHeight;
         const scrolled = Math.min(total, Math.max(0, window.scrollY - body.offsetTop));
         const pct = total > 0 ? Math.round((scrolled / total) * 100) : 0;
-        progress.style.width = pct + '%';
+        
+        // Update CSS custom property for plane position
+        progress.style.setProperty('--progress', pct + '%');
         progress.setAttribute('aria-valuenow', String(pct));
+        
+        // Add flight effects
+        addFlightEffects(progress);
       };
+      
       window.addEventListener('scroll', update, { passive: true });
       window.addEventListener('resize', update);
       update();
