@@ -1,0 +1,40 @@
+# A name for this workflow, which will be shown on GitHub
+name: Deploy Website to GitHub Pages
+
+# This workflow runs whenever you push changes to the 'main' branch
+on:
+  push:
+    branches:
+      - main
+
+# Give the workflow the correct permissions to deploy to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Define the job that will build and deploy the site
+jobs:
+  deploy:
+    # We don't need a special container; this runs on a standard virtual machine
+    runs-on: ubuntu-latest
+    steps:
+      # 1. This step checks out a copy of your repository code
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # 2. This step prepares your website files to be hosted
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      # 3. This step uploads your website files as an artifact
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # Upload the entire repository
+          path: '.'
+
+      # 4. This step takes the uploaded artifact and deploys it to the web
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
